@@ -103,26 +103,31 @@ Now that you've worked through the tutorial, here are some homework questions.
 1A) Make a histogram of body mass (body_mass_g). Choose the colors and labels that you like best
 
 ```{r}
-
+ggplot(penguins, aes(x = body_mass_g, fill = species)) +
+  geom_histogram(colour = "black")
 ```
 
 1B) Make density plot that compares body mass across different species.
 
 ```{r}
-
+ggplot(penguins, aes(x = body_mass_g, fill = species)) +
+  geom_density(alpha = 0.5) #the alpha affects transparency
 ```
 
 2A) Create a scatterplot of bill depth (x) and flipper length (y) colored by species.
 
 ```{r}
-
+ggplot(penguins, aes(x = bill_depth_mm, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  theme_minimal()
 ```
 
 2B) What happens when you color the data points by body mass (body_mass_g) instead of species?
 
 ```{r}
-
-
+ggplot(penguins, aes(x = bill_depth_mm, y = flipper_length_mm, color = body_mass_g)) +
+  geom_point() +
+  theme_minimal()
 ```
 
 
